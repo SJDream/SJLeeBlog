@@ -17,12 +17,6 @@ from django.conf.urls import url, patterns, include
 from django.contrib import admin
 admin.autodiscover()
 
-"""urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-
-]
-"""
-
 urlpatterns = patterns('',
 	url(r'^$', 'MyBlog.views.index', name='home'),
     url(r'^add/$', 'MyBlog.views.add', name='add'),
