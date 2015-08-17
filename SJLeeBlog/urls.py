@@ -19,6 +19,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', 'MyBlog.views.index', name='home'),
+    url(r'^home/$', 'MyBlog.views.index', name='home'),
+    url(r'^aboutMe/$', 'MyBlog.views.aboutMe', name='aboutMe'),
     url(r'^add/$', 'MyBlog.views.add', name='add'),
     url(r'^add2/(\d+)/(\d+)/$', 'MyBlog.views.add2', name='add2'),
 	url(r'^admin/', include(admin.site.urls)),
