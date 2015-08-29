@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'SJLeeBlogs',
         'USER': 'root',
         'PASSWORD': 'lsj@1986',
-        'HOST': '',#默认留空为localhost
+        'HOST': '127.0.0.1',#默认留空为localhost
         'PORT': '3306',
     }
 }
