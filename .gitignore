@@ -8,3 +8,11 @@
 *.pyc
 
 *.pyc
+
+.idea/.name
+
+*.ids
+
+*.pyc
+
+*.pyc

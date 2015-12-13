@@ -1,4 +1,4 @@
-import pymysql
+#import pymysql
 
 default_app_config = 'MyBlog.apps.MyblogConfig'
-pymysql.install_as_MySQLdb()
+#pymysql.install_as_MySQLdb()

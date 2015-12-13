@@ -1,3 +1,4 @@
+#coding=utf-8
 """SJLeeBlog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,13 +16,19 @@ Including another URLconf
 """
 from django.conf.urls import url, patterns, include
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^$', 'MyBlog.views.index', name='home'),
-    url(r'^home/$', 'MyBlog.views.index', name='home'),
-    url(r'^aboutMe/$', 'MyBlog.views.aboutMe', name='aboutMe'),
-    url(r'^add/$', 'MyBlog.views.add', name='add'),
-    url(r'^add2/(\d+)/(\d+)/$', 'MyBlog.views.add2', name='add2'),
-	url(r'^admin/', include(admin.site.urls)),
-)
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+                       url(r'^$', "MyBlog.views.index", name="home"),
+                       url(r'^home/$', "MyBlog.views.index", name="home"),
+                       url(r'^aboutMe/$', 'MyBlog.views.aboutMe', name='aboutMe'),
+                       url(r'^add/$', 'MyBlog.views.add', name='add'),
+                       url(r'^add2/(\d+)/(\d+)/$', 'MyBlog.views.add2', name='add2'),
+                       # url(r'^downloadfiles/$','MyBlog.views.downloadfiles',name='downloadfiles'),
+                       url(r'^downloadfiles/(?P<path>.*)$', 'django.views.static.serve',
+                           {'document_root': '/Users/SJLee/Documents/Code/Python/SJLeeBlog/MyBlog/downloadfiles',
+                            'show_indexes': True}, name='download'),
+                       )
